@@ -1,0 +1,2 @@
+- Adding some sorting and searching algorithms.
+- Adding the 'includes' function.
