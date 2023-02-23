@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "dynarray.h": "c",
+        "types.h": "c",
+        "stdbool.h": "c",
+        "cstdio": "c",
+        "array.h": "c"
+    }
+}
