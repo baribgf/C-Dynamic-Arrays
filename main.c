@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "../include/arrays.h"
+#include "include/arrays.h"
 
 int main(int argc, char const *argv[])
 {

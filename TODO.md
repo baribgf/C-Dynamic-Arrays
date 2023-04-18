@@ -1,3 +1,2 @@
 - Adding some sorting and searching algorithms.
 - Adding the 'includes' function.
-- Correct the init function (it should initialize both size and values).
