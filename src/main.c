@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-#include "../libs/array.h"
+#include "../include/arrays.h"
 
 void print(char* str)
 {
@@ -9,26 +10,14 @@ void print(char* str)
 
 int main(int argc, char const *argv[])
 {
-    parray arr;
+    iarray arr = new_iarray();
 
-    padd(&arr, -1, "10");
-    padd(&arr, -1, "20");
-    padd(&arr, -1, "30");
+    iadd(&arr, -1, 10);
+    iadd(&arr, -1, 20);
+    iadd(&arr, -1, 30);
 
-    print("Before remove");
+    irem(&arr, 0);
 
-    for (int i = 0; i < arr.size; i++)
-    {
-        printf("%p\n", (char*) arr.values[i]);
-    }
-
-    prem(&arr, -1);
-
-    print("\nAfter remove");
-    for (int i = 0; i < arr.size; i++)
-    {
-        printf("%p\n", (char*) arr.values[i]);
-    }
-    
+    print_iarr(arr);
     return 0;
 }

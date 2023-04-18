@@ -1,8 +1,8 @@
 
 /* 
-    A Clang library to work with dynamic arrays with different actions: add, remove, find, includes.
-    Created by: Bari BGF
-    On: 10-02-2023
+ * A Clang library to work with dynamic arrays with different actions: add, remove, find, includes.
+ * Created by: Bari BGF
+ * On: 10-02-2023
  */
 
 #ifndef TYPES_H
@@ -56,7 +56,20 @@ typedef struct
     int size;
 } parray;
 
-#define init(array) array.size = 0;
+// Create new iarray
+iarray new_iarray();
+
+// Create new darray
+darray new_darray();
+
+// Create new carray
+carray new_carray();
+
+// Create new sarray
+sarray new_sarray();
+
+// Create new parray
+parray new_parray();
 
 // add by index
 #define _add(array, value, index, type) {                                  \
@@ -79,35 +92,24 @@ typedef struct
         else                                                               \
             new_array[i] = value;                                          \
     }                                                                      \
-    free(array->values);                                                   \
     array->values = new_array;                                             \
     array->size++;                                                         \
 }
 
 // Add int to iarray
-void iadd(iarray* array, int index, int value) {
-    _add(array, value, index, int);
-}
+void iadd(iarray* array, int index, int value);
 
 // Add char to carray
-void cadd(carray* array, int index, char value) {
-    _add(array, value, index, char);
-}
+void cadd(carray* array, int index, char value);
 
 // Add double to darray
-void dadd(darray* array, int index, double value) {
-    _add(array, value, index, double);
-}
+void dadd(darray* array, int index, double value);
 
 // Add string to sarray
-void sadd(sarray* array, int index, char* value) {
-    _add(array, value, index, char*);
-}
+void sadd(sarray* array, int index, char* value);
 
 // Add pointer to parray
-void padd(parray* array, int index, void* value) {
-    _add(array, value, index, void*);
-}
+void padd(parray* array, int index, void* value);
 
 // remove with index
 #define _rem(array, index, type)                                           \
@@ -129,37 +131,28 @@ void padd(parray* array, int index, void* value) {
         else                                                               \
             new_array[i] = array->values[i + 1];                           \
     }                                                                      \
-    free(array->values);                                                   \
     array->values = new_array;                                             \
     array->size--;                                                         \
 }
 
 // Remove integer from iarray by index
-void irem(iarray* array, int index) {
-    _rem(array, index, int);
-}
+void irem(iarray* array, int index);
 
 // Remove char from carray by index
-void crem(carray* array, int index) {
-    _rem(array, index, char);
-}
+void crem(carray* array, int index);
 
 // Remove double from darray by index
-void dorem(darray* array, int index) {
-    _rem(array, index, double);
-}
+void dorem(darray* array, int index);
 
 // Remove string from sarray by index
-void srem(sarray* array, int index) {
-    _rem(array, index, char*);
-}
+void srem(sarray* array, int index);
 
 // Remove pointer from parray by index
-void prem(parray* array, int index) {
-    _rem(array, index, void*);
-}
+void prem(parray* array, int index);
 
 // Output array into shell
+void print_iarr(iarray array);
+
 #define print_arr(array)                          \
 {                                                 \
     printf("%s", "[ ");                           \
