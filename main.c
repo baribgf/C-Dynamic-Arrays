@@ -1,23 +1,16 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 #include "include/arrays.h"
 
-int main(int argc, char const *argv[])
+int main()
 {
-    iarray arr = new_iarray();
+    sarray arr = new_sarray();
 
-    append_i(&arr, 10);
-    append_i(&arr, 30);
-    append_i(&arr, 20);
-    append_i(&arr, 40);
+    append_s(&arr, "aa");
+    append_s(&arr, "bb");
+    append_s(&arr, "cc");
 
-    print_iarr(arr);
-    printf("Size: %d\n", arr.size);
-
-    printf("Returned from pop: %d\n", pop_i(&arr));
-
-    print_iarr(arr);
-    printf("Size: %d\n", arr.size);
+    print_sarr(arr);
 
     return 0;
 }

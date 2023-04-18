@@ -4,7 +4,7 @@
         {
             "label": "Build / Run",
             "type": "shell",
-            "command": "gcc ${workspaceFolder}/src/* ${workspaceFolder}/main.c  -o bin/${fileBasenameNoExtension} && bin/${fileBasenameNoExtension}",
+            "command": "gcc ${workspaceFolder}/src/*.c ${cwd}/*.c  -o bin/${fileBasenameNoExtension} && bin/*",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
