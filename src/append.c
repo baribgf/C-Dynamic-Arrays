@@ -4,7 +4,6 @@
 
 void append_i(iarray* array, int value)
 {
-    int last = i_at(*array, -1);
     insert_i(array, -1, value);
 }
 

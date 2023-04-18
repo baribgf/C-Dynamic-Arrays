@@ -5,10 +5,6 @@
  * On: 10-02-2023
  */
 
-#ifndef TYPES_H
-    #include "types.h"
-#endif
-
 #ifndef B_DYN_ARRAY
     #define B_DYN_ARRAY 1
 #endif
