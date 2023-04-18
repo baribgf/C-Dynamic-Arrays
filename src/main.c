@@ -16,9 +16,10 @@ int main(int argc, char const *argv[])
     padd(&arr, -1, "30");
 
     print("Before remove");
+
     for (int i = 0; i < arr.size; i++)
     {
-        printf("%s\n", arr.values[i]);
+        printf("%p\n", (char*) arr.values[i]);
     }
 
     prem(&arr, -1);
@@ -26,7 +27,7 @@ int main(int argc, char const *argv[])
     print("\nAfter remove");
     for (int i = 0; i < arr.size; i++)
     {
-        printf("%s\n", arr.values[i]);
+        printf("%p\n", (char*) arr.values[i]);
     }
     
     return 0;
